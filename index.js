@@ -20,6 +20,8 @@ app.listen(port, () => {
 
 app.get('/', (req, res) => {
   res.send(process.env.GOOGLE_EMAIL);
+  res.send("7777777777777777777777777777777777777777");
+  res.send(process.env.GOOGLE_PASSWORD);
   console.log("FUNCIONA");
   console.log("process.env.GOOGLE_EMAIL = ", process.env.GOOGLE_EMAIL);
   //res.send("funcionaaaaaaa!");
