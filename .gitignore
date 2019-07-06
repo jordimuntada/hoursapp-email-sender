@@ -56,9 +56,10 @@ typings/
 
 # dotenv environment variables file
 .env
+.build
 
 # next.js build output
 .next
 
 # other now.json as old
-.now.json.old
+.old
