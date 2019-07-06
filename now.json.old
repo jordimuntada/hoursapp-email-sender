@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "name": "nodejs-express",
+  "builds": [
+    { "src": "index.js", "use": "@now/node-server"}
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "app.js"}
+  ],
+  "env": {
+    "GOOGLE_EMAIL": "hoursisthefuture@gmail.com",
+    "GOOGLE_PASSWORD": "somelfutur2018"
+  },
+  "build": {
+    "env": {
+      "GOOGLE_EMAIL": "hoursisthefuture@gmail.com",
+      "GOOGLE_PASSWORD": "somelfutur2018"
+    }
+  }
+}

@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
+require('dotenv').config();
 
 const app = express();
 
@@ -18,8 +19,9 @@ app.listen(port, () => {
 
 
 app.get('/', (req, res) => {
-  //res.send('Welcome to my api. Collons!!!');
   res.send(process.env.GOOGLE_EMAIL);
+  console.log("FUNCIONA");
+  console.log("process.env.GOOGLE_EMAIL = ", process.env.GOOGLE_EMAIL);
   //res.send("funcionaaaaaaa!");
 })
 
