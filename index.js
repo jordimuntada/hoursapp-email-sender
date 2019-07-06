@@ -19,7 +19,8 @@ app.listen(port, () => {
 
 app.get('/', (req, res) => {
   //res.send('Welcome to my api. Collons!!!');
-  res.send(process.env.GOOGLE_EMAIL);
+  //res.send(process.env.GOOGLE_EMAIL);
+  res.send("funcionaaaaaaa!");
 })
 
 app.post('/api/v1', (req,res) => {
