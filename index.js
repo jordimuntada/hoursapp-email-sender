@@ -25,35 +25,39 @@ app.get('/', (req, res) => {
   //res.send("funcionaaaaaaa!");
 })
 
-app.post('/api/v1', (req,res) => {
-  var data = req.body;
+//app.post('/api/v1', (req,res) => {
+  //var data = req.body;
 
-var smtpTransport = nodemailer.createTransport({
-  service: 'Gmail',
-  port: 465,
-  auth: {
-    user: process.env.GOOGLE_EMAIL,
-    pass: process.env.GOOGLE_PASSWORD
-  }
-});
+  var smtpTransport = nodemailer.createTransport({
+    service: 'gmail',
+    port: 465,
+    auth: {
+      user: "hoursisthefuture@gmail.com", //process.env.GOOGLE_EMAIL,
+      pass: "somelfutur2018" //process.env.GOOGLE_PASSWORD
+    }
+  });
 
-var mailOptions = {
-  from: data.email,
-  to: 'jmuntada@gmail.com',
-  subject: "Prova d'enviar email des de Hours App",
-  html: `<p>${data.name}</p>
-          <p>${data.email}</p>
-          <p>${data.message}</p>`
-};
+  var mailOptions = {
+    from: "hoursisthefuture@gmail.com", //data.email,
+    to: 'jmuntada@gmail.com',
+    subject: "Prova d'enviar email des de Hours App",
+    html: `<p>Homer</p>
+            <p>homer@fox.es</p>
+            <p>Hi, I am Homer!</p>`
+    /*html: `<p>${data.name}</p>
+            <p>${data.email}</p>
+            <p>${data.message}</p>`
+    */
+  };
 
-smtpTransport.sendMail(mailOptions,
-(error, response) => {
-  if(error) {
-    res.send(error)
-  }else {
-    res.send('Success')
-  }
-  smtpTransport.close();
-});
+  smtpTransport.sendMail(mailOptions,
+  (error, response) => {
+    if(error) {
+      res.send(error)
+    }else {
+      res.send('Success')
+    }
+    smtpTransport.close();
+  });
 
-})
+//})
